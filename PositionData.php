@@ -10,7 +10,7 @@ class PositionData{
             return self::$_instance;
         }
     }
-    public function addData($u_id, $longitude, $latitude, $accuracy){
+    public function addData($latitude, $longitude, $u_id="", $accuracy=""){
         $db = Db::getInstance();
         return $db->query("INSERT INTO position VALUES(null, '$u_id', '$longitude', '$latitude', '$accuracy')");
     }

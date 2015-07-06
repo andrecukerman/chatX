@@ -12,7 +12,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 
 button.click(function(){
-	$.post("t.php",{"attr[]":[latitude,longitude]},function(data){
+	$.post("../position.php",{"attr[]":[latitude,longitude]},function(data){
 		
 	});
 

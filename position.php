@@ -7,9 +7,10 @@ function my_autoload($class){
     include_once $class.'.php';
 }
 spl_autoload_register('my_autoload');
+
 $position1 = PositionData::getInstance();
-$data_arr = array();
-if (!empty($data_arr)){
-    $position1->addData($data_arr[0], $data_arr[1], $data_arr[2], $data_arr[3]);
+if (isset($_POST['attr']) && !empty($_POST['attr'])){
+     //добавить $u_id="", $accuracy=""
+    $position1->addData($_POST['attr'][0], $_POST['attr'][1]);
 }
 var_dump($position1->listData());
